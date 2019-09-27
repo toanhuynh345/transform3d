@@ -34,15 +34,14 @@ Flashcard.prototype = {
             async: false,
             success: function (response) {
                 that.dataFlashCard = response;
-                // Hỏi anh Đô Process Callback Cho bất đồng bộ
             }
         });
         return that
     },
     setDataFlashCard: function(){
         var that = this;
-        that.slideFront.html(that.dataFlashCard.name);
-        that.slideBack.html(that.dataFlashCard.jp_name);
+        that.slideFront.html(that.dataFlashCard[0].vn_name);
+        that.slideBack.html(that.dataFlashCard[0].jp_name);
         return that;
     }
 }
